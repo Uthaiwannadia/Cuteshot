@@ -1,49 +1,50 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ทดสอบกล้อง</title>
+  <title>Camera 4 Shots</title>
   <style>
     body {
-      font-family: system-ui, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      margin-top: 30px;
+      font-family: sans-serif;
+      margin: 0; padding: 16px;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 16px;
     }
     video, canvas {
-      width: min(90vw, 400px);
-      aspect-ratio: 4/5;
+      width: 360px; height: 480px;
       background: #000;
-      border-radius: 10px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+    video {
+      transform: scaleX(-1); /* กลับด้านแบบเซลฟี่ */
     }
     button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      background: #0ea5e9;
-      color: white;
-      font-size: 16px;
-      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h2>📸 ทดสอบกล้อง</h2>
+  <h1>Photobooth 4 Shots (2x2)</h1>
 
-  <!-- ภาพสดจากกล้อง -->
-  <video id="camera" autoplay playsinline muted></video>
+  <video id="liveVideo" autoplay playsinline muted></video>
+  <canvas id="finalCanvas" width="720" height="960"></canvas>
 
-  <!-- ปุ่มถ่าย -->
-  <button id="capture">ถ่ายภาพ</button>
+  <div>
+    <button id="openCam">Open Camera</button>
+    <button id="capture">Capture</button>
+    <button id="reset">Reset</button>
+  </div>
 
-  <!-- แสดงผลลัพธ์ -->
-  <canvas id="photo" width="1176" height="1470"></canvas>
+  <p id="status">Press "Open Camera" to start.</p>
 
-  <!-- ลิงก์ไฟล์ JS -->
   <script src="camera.js"></script>
 </body>
 </html>
+
+
+
