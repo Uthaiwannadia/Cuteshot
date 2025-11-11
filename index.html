@@ -1,50 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Camera 4 Shots</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0; padding: 16px;
-      display: flex; flex-direction: column; align-items: center;
-      gap: 16px;
-    }
-    video, canvas {
-      width: 360px; height: 480px;
-      background: #000;
-      border-radius: 12px;
-      object-fit: cover;
-    }
-    video {
-      transform: scaleX(-1); /* กลับด้านแบบเซลฟี่ */
-    }
-    button {
-      padding: 10px 14px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      cursor: pointer;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I LUV Photobooth</title>
+  <link rel="stylesheet" href="home.css" />
 </head>
 <body>
-  <h1>Photobooth 4 Shots (2x2)</h1>
+  <div class="phone">
+    <div class="topbar">
+      <div class="topbar__title">I LUV <span class="heart">❤</span></div>
+    </div>
 
-  <video id="liveVideo" autoplay playsinline muted></video>
-  <canvas id="finalCanvas" width="720" height="960"></canvas>
-
-  <div>
-    <button id="openCam">Open Camera</button>
-    <button id="capture">Capture</button>
-    <button id="reset">Reset</button>
+    <div class="panel">
+      <!-- ปุ่ม Start -->
+      <img src="Mymelodyypic/start.png" alt="Start" class="start" id="startButton" />
+    </div>
   </div>
 
-  <p id="status">Press "Open Camera" to start.</p>
-
-  <script src="camera.js"></script>
+  <script>
+    // เมื่อคลิกที่รูป start.png จะไปหน้า menu.html
+    document.getElementById("startButton").addEventListener("click", function() {
+      window.location.href = "menu.html";
+    });
+  </script>
 </body>
 </html>
-
-
 
