@@ -34,7 +34,7 @@ body {
   width: 100%;         /* ยืดเต็มกรอบมือถือ */
   height: auto;        /* รักษาสัดส่วน */
   display: block;
-  border-radius: 12px; /* ให้ขอบมนเหมือน topbar */
+  border-radius: 0px; /* ให้ขอบมนเหมือน topbar */
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
   margin-bottom: 18px; /* ระยะห่างจากพาเนลชมพู */
 }
@@ -96,7 +96,7 @@ button {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 12px;
+  margin-top: 0px;
 }
 
 /* สำหรับหน้าจอเล็ก */
