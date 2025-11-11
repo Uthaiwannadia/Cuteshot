@@ -18,7 +18,7 @@ body {
   justify-content: center;
 }
 
-/* กรอบมือถือแนวตั้ง (ให้พฤติกรรมเหมือนหน้า home) */
+/* ===== กรอบมือถือ ===== */
 .phone {
   width: min(430px, 100%);
   min-height: 100dvh;
@@ -26,19 +26,20 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch; /* ✅ ให้ยืดเต็มกรอบมือถือ */
 }
 
-/* ===== รูปโลโก้ใน topbar (มี menu.png + cooltext.png เรียงบน-ล่าง) ===== */
+/* ===== TOPBAR (menu.png + cooltext.png เรียงบน-ล่าง) ===== */
 .topbar {
+  width: 100%;               /* ✅ ยืดเต็มความกว้างเหมือนหน้า home */
   border: 2px solid #ccc;
   border-radius: 12px;
   padding: 8px 12px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column;     /* เรียงบน-ล่าง */
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 4px;                   /* ระยะห่างระหว่างรูป */
   background: none;
 }
 
@@ -47,8 +48,8 @@ body {
   height: 32px;
   width: auto;
   object-fit: contain;
-  display: block;
   max-width: 95%;
+  display: block;
 }
 
 /* รูปล่าง: cooltext.png */
@@ -56,23 +57,23 @@ body {
   height: 22px;
   width: auto;
   object-fit: contain;
-  display: block;
   max-width: 95%;
+  display: block;
 }
 
-/* จอใหญ่ขึ้น → รูปใหญ่ขึ้น */
+/* จอใหญ่ขึ้น */
 @media (min-width: 768px) {
   .topbar__menu { height: 36px; }
   .topbar__cooltext { height: 26px; }
 }
 
-/* จอเล็กลง → รูปเล็กลง */
+/* จอเล็กลง */
 @media (max-width: 360px) {
   .topbar__menu { height: 28px; }
   .topbar__cooltext { height: 20px; }
 }
 
-/* ===== พื้นหลังสีชมพูหลัก (ให้เท่ากับหน้า home) ===== */
+/* ===== พื้นหลังสีชมพูหลัก (เท่ากับหน้า home) ===== */
 .panel {
   margin-top: 18px;
   background: var(--panel);
@@ -87,7 +88,7 @@ body {
   justify-content: center;
 }
 
-/* แสงชมพูระเรื่อ (ไม่ให้บังการคลิก) */
+/* แสงชมพูระเรื่อ */
 .panel::before {
   content: "";
   position: absolute;
