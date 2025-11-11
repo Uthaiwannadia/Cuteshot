@@ -12,7 +12,10 @@ body{
 
 /* กรอบมือถือแนวตั้ง */
 .phone{
-  width:430px; min-height:100dvh; padding:16px 16px 32px; position:relative;
+  width:min(430px, 100%);     /* ✅ ยืดหยุ่นกับจอเล็ก */
+  min-height:100dvh;
+  padding:16px 16px 32px;
+  position:relative;
 }
 
 /* แถบบน */
@@ -29,19 +32,25 @@ body{
   margin-top:18px; background:var(--panel); border-radius:36px;
   min-height:70vh; position:relative; overflow:hidden;
   box-shadow: inset 0 0 0 2px rgba(0,0,0,.04);
+  display:flex; align-items:center; justify-content:center;   /* ✅ กึ่งกลาง */
 }
 .panel::before{
   content:""; position:absolute; inset:0;
   background:radial-gradient(closest-side, var(--pink-400), transparent 70%);
   opacity:.6;
+  z-index:0;                 /* ✅ อยู่ใต้คอนเทนต์ */
+  pointer-events:none;       /* ✅ ไม่บังการคลิก */
 }
 
 /* ปุ่ม Start ให้อยู่กลางพาเนล */
 .index-container{
-  position:absolute; inset:0;               /* กินเต็มพาเนล */
+  position:relative;         /* ✅ จาก absolute -> relative */
+  width:100%;
   display:flex; align-items:center; justify-content:center;
+  z-index:1;                 /* ✅ เหนือ ::before */
 }
 button{ background:none; border:none; padding:0; cursor:pointer; }
+#index-start-button{ z-index:2; }     /* ✅ ดันปุ่มให้บนสุด */
 #index-start-button img{ width:200px; height:auto; transition:.2s; }
 #index-start-button img:hover{ transform:scale(1.05); }
 
