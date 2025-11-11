@@ -40,14 +40,7 @@ body {
   margin: 0 0 6px;
 }
 
-/* Cooltext PNG - slightly smaller */
-.cooltext-img {
-  width: 50%;
-  max-width: 300px;
-  height: auto;
-  display: block;
-  margin: 0 auto 12px;
-}
+
 
 /* Pink background section */
 .panel {
@@ -101,11 +94,14 @@ button {
 }
 
 /* Footer image */
-.footer-img {
+  .cooltext-img {
   width: 100%;
   height: auto;
   display: block;
   margin-top: 8px;
+
+}
+
 }
 
 /* Responsive adjustments */
