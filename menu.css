@@ -31,7 +31,7 @@ body {
 
 /* แถบบน (ถ้าใช้โลโก้รูปภาพใน topbar) */
 .topbar {
-  height: 80px;
+  height: 500px;
   border: none;
   background: none;
   display: flex;
