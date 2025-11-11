@@ -18,23 +18,25 @@ body {
   justify-content: center;
 }
 
-/* กรอบมือถือแนวตั้ง */
+/* กรอบมือถือแนวตั้ง (ให้พฤติกรรมเหมือนหน้า home) */
 .phone {
-  width: 430px;
+  width: min(430px, 100%);
   min-height: 100dvh;
   padding: 16px 16px 32px;
   position: relative;
+  display: flex;              /* ✅ ให้โครงสร้างเหมือนหน้า home */
+  flex-direction: column;
+  align-items: center;
 }
 
-/* แถบบน */
+/* แถบบน (ถ้าใช้โลโก้รูปภาพใน topbar) */
 .topbar {
-  height: 56px;
-  border: 2px solid #ccc;
-  border-radius: 12px;
+  height: 80px;
+  border: none;
+  background: none;
   display: flex;
-  align-items: center;
   justify-content: center;
-  position: relative;
+  align-items: center;
 }
 
 .topbar__title {
@@ -45,19 +47,29 @@ body {
   line-height: 1;
 }
 
+/* ถ้าใช้ <img class="menu-logo"> ภายใน topbar */
+.menu-logo {
+  height: 56px;               /* ✅ ให้พอดีกับความสูง topbar */
+  width: auto;
+  object-fit: contain;
+}
 
-/* ===== พื้นหลังสีชมพูหลัก ===== */
+/* ===== พื้นหลังสีชมพูหลัก (ให้เท่ากับหน้า home) ===== */
 .panel {
   margin-top: 18px;
   background: var(--panel);
   border-radius: 36px;
   min-height: 70vh;
+  width: 100%;                /* ✅ กว้างเต็มกรอบมือถือ */
   position: relative;
   overflow: hidden;
   box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.04);
+  display: flex;              /* ✅ จัดกึ่งกลางคอนเทนต์ด้านใน */
+  align-items: center;
+  justify-content: center;
 }
 
-/* เพิ่มแสงชมพูตรงกลางแบบระเรื่อ */
+/* แสงชมพูระเรื่อ (ไม่ให้บังการคลิก) */
 .panel::before {
   content: "";
   position: absolute;
@@ -65,18 +77,18 @@ body {
   background: radial-gradient(closest-side, var(--pink-400), transparent 70%);
   opacity: 0.6;
   transform: translateZ(0);
+  pointer-events: none;       /* ✅ ไม่บังปุ่ม */
+  z-index: 0;
 }
 
 /* ===== ปุ่มอยู่กลางหน้าจอ ===== */
 .menu-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;         /* ✅ จาก absolute -> relative ให้เสถียรเหมือนหน้า home */
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  z-index: 1;                 /* อยู่เหนือ ::before */
 }
 
 /* ===== ปุ่ม ===== */
@@ -94,7 +106,6 @@ button {
   transition: 0.2s;
 }
 
-/* เมื่อเอาเมาส์ไปชี้ จะขยายเล็กน้อย */
 #menu-camera-button img:hover,
 #menu-upload-button img:hover {
   transform: scale(1.05);
@@ -102,22 +113,8 @@ button {
 
 /* สำหรับหน้าจอเล็ก */
 @media (max-width: 360px) {
-  .menu-container button img {
+  #menu-camera-button img,
+  #menu-upload-button img {
     width: 160px;
   }
-}
-/* ===== รูปโลโก้ใน topbar ===== */
-.topbar {
-  height: 80px; /* ปรับความสูงให้เหมาะกับภาพ */
-  border: none; /* เอาเส้นกรอบออก */
-  background: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.menu-logo {
-  height: 550px; /* ขนาดโลโก้ */
-  width: auto;
-  object-fit: contain;
 }
