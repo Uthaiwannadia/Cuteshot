@@ -1,27 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>I LUV Photobooth</title>
-  <link rel="stylesheet" href="home.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>I LUV Photoboot</title>
+
+  <!-- เชื่อมไฟล์ CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="phone">
-    <div class="topbar">
-      <div class="topbar__title">I LUV <span class="heart">❤</span></div>
-    </div>
+  <main class="phone">
 
-    <div class="panel">
-      <!-- ปุ่ม Start -->
-      <img src="Mymelodyypic/start.png" alt="Start" class="start" id="startButton" />
-    </div>
-  </div>
+    <!-- Header -->
+    <header class="topbar" role="banner">
+      <img class="topbar__bow" src="Mymelodyypic/bowpink.png" alt="" aria-hidden="true">
+      <div class="topbar__title">I <span class="heart">❤</span> CUTESHOT</div>
+    </header>
 
+    <!-- พื้นที่ถ่ายรูป -->
+    <section class="panel" role="region" aria-label="camera stage">
+      <!-- ปุ่ม START แบบ PNG -->
+      <img class="start" src="Mymelodyypic/start.png" alt="Start" id="startButton">
+    </section>
+
+    <!-- เครื่องพิมพ์ -->
+    <section class="printer" aria-label="printer">
+      <img class="printer__paper" src="Mymelodyypic/print.png" alt="printed ticket">
+    </section>
+
+  </main>
+
+  <!-- เชื่อม JavaScript -->
   <script>
-    // เมื่อคลิกที่รูป start.png จะไปหน้า menu.html
-    document.getElementById("startButton").addEventListener("click", function() {
-      window.location.href = "menu.html";
+    // เมื่อคลิกปุ่ม Start → ไปหน้า menu.html
+    document.getElementById('startButton').addEventListener('click', () => {
+      window.location.href = 'menu.html';
     });
   </script>
 </body>
