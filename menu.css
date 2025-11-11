@@ -24,15 +24,15 @@ body{
   position:relative;
 }
 
-/* ✅ แทน topbar ด้วย PNG menu.png */
-.header-img{
-  width:100%;
-  height:56px;                /* ✅ ให้เท่ากับความสูง topbar เดิม */
-  object-fit:contain;
-  border-radius:12px;         /* ✅ ขอบมนเท่ากัน */
-  border:2px solid #ccc;      /* ✅ เส้นกรอบเหมือน topbar */
-  display:block;
-  margin-bottom:18px;         /* ระยะห่างจาก panel ด้านล่าง */
+
+.header-img {
+  width: 100%;                /* กว้างเต็มกรอบมือถือ */
+  height: 56px;               /* เท่ากับความสูง topbar เดิม */
+  object-fit: cover;          /* ✅ เติมเต็มกรอบ ไม่ให้เหลือขาว */
+  border-radius: 12px;        /* มุมโค้งเท่ากับ topbar */
+  border: 2px solid #ccc;     /* เส้นขอบเท่ากับ topbar */
+  display: block;
+  margin-bottom: 18px;        /* ระยะห่างจาก panel ด้านล่าง */
 }
 
 /* พาเนลหลัก */
