@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>I LUV Photoboot</title>
 
-  <!-- เชื่อมไฟล์ CSS -->
+
   <link rel="stylesheet" href="home.css" />
 </head>
 <body>
@@ -13,15 +13,13 @@
 
     <!-- Header -->
     <header class="topbar" role="banner">
-      <!-- โบว์ PNG -->
       <img class="topbar__bow" src="Mymelodyypic/bowpink.png" alt="" aria-hidden="true">
       <div class="topbar__title">I <span class="heart">❤</span> CUTESHOT</div>
     </header>
 
     <!-- พื้นที่ถ่ายรูป -->
     <section class="panel" role="region" aria-label="camera stage">
-      <!-- ปุ่ม START แบบ PNG -->
-      <img class="start" src="Mymelodyypic/start.png" alt="Start">
+      <img class="start" src="Mymelodyypic/start.png" alt="Start" id="startButton">
     </section>
 
     <!-- เครื่องพิมพ์ -->
@@ -30,5 +28,14 @@
     </section>
 
   </main>
+
+  <!-- เมื่อกดปุ่ม Start → ไปหน้า menu.html -->
+  <script>
+    document.getElementById('startButton').addEventListener('click', () => {
+      window.location.href = 'menu.html';
+    });
+  </script>
 </body>
 </html>
+
+
