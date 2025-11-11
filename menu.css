@@ -1,10 +1,10 @@
 :root {
-  --pink-100: #ffe5ef;
-  --pink-200: #ffd6e6;
-  --pink-300: #ffbfd4;
-  --pink-400: #ffa5c3;
-  --panel: #fde3ec;
-  --ink: #111;
+  --pink-100:#ffe5ef; 
+  --pink-200:#ffd6e6; 
+  --pink-300:#ffbfd4;
+  --pink-400:#ffa5c3; 
+  --panel:#fde3ec; 
+  --ink:#111;
 }
 
 * { box-sizing: border-box; }
@@ -18,11 +18,10 @@ body {
   justify-content: center;
 }
 
-/* กรอบมือถือ */
+/* Main frame */
 .phone {
   width: min(430px, 100%);
   min-height: 100dvh;
-  /* ✅ เอา padding บนออก เพื่อให้หัว PNG ชิดขอบ */
   padding: 0 16px 32px;
   display: flex;
   flex-direction: column;
@@ -30,27 +29,27 @@ body {
   background: #fff;
 }
 
-/* ✅ PNG แถบบน responsive เหมือน topbar หน้า home */
+/* Header PNG */
 .header-img {
-  width: 100%;          /* ยืดเต็มกรอบมือถือ */
-  height: auto;         /* รักษาสัดส่วน */
+  width: 100%;
+  height: auto;
   display: block;
   border: none;
   border-radius: 0;
   box-shadow: none;
-  margin-bottom: 6px;   /* ✅ ลดช่องว่างให้ใกล้กับ cooltext มากขึ้น */
+  margin: 0 0 6px;
 }
 
-/* ✅ cooltext อยู่ใต้ header-img และเล็กลงนิดนึง */
+/* Cooltext PNG - slightly smaller */
 .cooltext-img {
-  width: 70%;           /* ✅ ขนาดเล็กกว่าหัว (ประมาณ 70%) */
-  max-width: 300px;     /* จำกัดความกว้างสูงสุด */
+  width: 70%;
+  max-width: 300px;
   height: auto;
   display: block;
-  margin: 0 auto 14px;  /* อยู่กลางและเว้นช่องเล็กน้อยก่อนพาเนลชมพู */
+  margin: 0 auto 12px;
 }
 
-/* พื้นหลังชมพู */
+/* Pink background section */
 .panel {
   background: var(--panel);
   border-radius: 36px;
@@ -58,25 +57,23 @@ body {
   min-height: 70vh;
   position: relative;
   overflow: hidden;
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.04);
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-top: 0;         /* ✅ ชิดกับ cooltext */
+  justify-content: center;
+  margin-top: 0;
 }
 
-/* แสงชมพูระเรื่อ */
 .panel::before {
   content: "";
   position: absolute;
   inset: 0;
   background: radial-gradient(closest-side, var(--pink-400), transparent 70%);
-  opacity: 0.6;
+  opacity: .6;
   pointer-events: none;
   z-index: 0;
 }
 
-/* ปุ่มตรงกลาง */
+/* Centered buttons */
 .menu-container {
   position: relative;
   display: flex;
@@ -103,16 +100,16 @@ button {
   transform: scale(1.05);
 }
 
-/* ✅ รูปล่างสุด (ปลาสีฟ้า + ข้อความ) */
+/* Footer image */
 .footer-img {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 0px;
+  margin-top: 8px;
 }
 
-/* สำหรับหน้าจอเล็ก */
+/* Responsive adjustments */
 @media (max-width: 360px) {
   .menu-container img { width: 160px; }
-  .cooltext-img { width: 65%; } /* ✅ ปรับให้เล็กลงอีกนิดบนจอเล็ก */
+  .cooltext-img { width: 65%; }
 }
