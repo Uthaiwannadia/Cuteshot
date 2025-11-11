@@ -30,30 +30,48 @@ body {
 }
 
 /* แถบบน (ถ้าใช้โลโก้รูปภาพใน topbar) */
+/* ===== รูปโลโก้ใน topbar (มี menu.png + cooltext.png เรียงบน-ล่าง) ===== */
 .topbar {
-  height: 1000px;
-  border: none;
-  background: none;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 8px 12px;          /* เว้นขอบพอดี */
   display: flex;
-  justify-content: center;
+  flex-direction: column;     /* รูปบน-ล่าง */
   align-items: center;
+  justify-content: center;
+  gap: 4px;                   /* ระยะห่างระหว่างรูป */
+  background: none;
 }
 
-.topbar__title {
-  font-weight: 900;
-  letter-spacing: 0.5px;
-  color: var(--ink);
-  font-size: 28px;
-  line-height: 1;
-}
-
-/* ถ้าใช้ <img class="menu-logo"> ภายใน topbar */
-.menu-logo {
-  height: 56px;               /* ✅ ให้พอดีกับความสูง topbar */
+/* รูปบน: menu.png */
+.topbar__menu {
+  height: 32px;               /* ปรับได้ตามต้องการ */
   width: auto;
   object-fit: contain;
+  display: block;
+  max-width: 95%;
 }
 
+/* รูปล่าง: cooltext.png */
+.topbar__cooltext {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  max-width: 95%;
+}
+
+/* จอใหญ่ขึ้น → รูปใหญ่ขึ้น */
+@media (min-width: 768px) {
+  .topbar__menu { height: 36px; }
+  .topbar__cooltext { height: 26px; }
+}
+
+/* จอเล็กลง → รูปเล็กลง */
+@media (max-width: 360px) {
+  .topbar__menu { height: 28px; }
+  .topbar__cooltext { height: 20px; }
+}
 /* ===== พื้นหลังสีชมพูหลัก (ให้เท่ากับหน้า home) ===== */
 .panel {
   margin-top: 18px;
