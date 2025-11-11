@@ -24,28 +24,27 @@ body {
   min-height: 100dvh;
   padding: 16px 16px 32px;
   position: relative;
-  display: flex;              /* ✅ ให้โครงสร้างเหมือนหน้า home */
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* แถบบน (ถ้าใช้โลโก้รูปภาพใน topbar) */
 /* ===== รูปโลโก้ใน topbar (มี menu.png + cooltext.png เรียงบน-ล่าง) ===== */
 .topbar {
   border: 2px solid #ccc;
   border-radius: 12px;
-  padding: 8px 12px;          /* เว้นขอบพอดี */
+  padding: 8px 12px;
   display: flex;
-  flex-direction: column;     /* รูปบน-ล่าง */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;                   /* ระยะห่างระหว่างรูป */
+  gap: 4px;
   background: none;
 }
 
 /* รูปบน: menu.png */
 .topbar__menu {
-  height: 32px;               /* ปรับได้ตามต้องการ */
+  height: 32px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -72,17 +71,18 @@ body {
   .topbar__menu { height: 28px; }
   .topbar__cooltext { height: 20px; }
 }
+
 /* ===== พื้นหลังสีชมพูหลัก (ให้เท่ากับหน้า home) ===== */
 .panel {
   margin-top: 18px;
   background: var(--panel);
   border-radius: 36px;
   min-height: 70vh;
-  width: 100%;                /* ✅ กว้างเต็มกรอบมือถือ */
+  width: 100%;
   position: relative;
   overflow: hidden;
   box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.04);
-  display: flex;              /* ✅ จัดกึ่งกลางคอนเทนต์ด้านใน */
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -95,18 +95,18 @@ body {
   background: radial-gradient(closest-side, var(--pink-400), transparent 70%);
   opacity: 0.6;
   transform: translateZ(0);
-  pointer-events: none;       /* ✅ ไม่บังปุ่ม */
+  pointer-events: none;
   z-index: 0;
 }
 
 /* ===== ปุ่มอยู่กลางหน้าจอ ===== */
 .menu-container {
-  position: relative;         /* ✅ จาก absolute -> relative ให้เสถียรเหมือนหน้า home */
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  z-index: 1;                 /* อยู่เหนือ ::before */
+  z-index: 1;
 }
 
 /* ===== ปุ่ม ===== */
