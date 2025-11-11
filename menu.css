@@ -18,74 +18,39 @@ body {
   justify-content: center;
 }
 
-/* ===== กรอบมือถือ ===== */
+/* กรอบมือถือ */
 .phone {
   width: min(430px, 100%);
   min-height: 100dvh;
   padding: 16px 16px 32px;
-  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: stretch; /* ✅ ให้ยืดเต็มกรอบมือถือ */
-}
-
-/* ===== TOPBAR (menu.png + cooltext.png เรียงบน-ล่าง) ===== */
-.topbar {
-  width: 100%;               /* ✅ ยืดเต็มความกว้างเหมือนหน้า home */
-  border: 2px solid #ccc;
-  border-radius: 12px;
-  padding: 8px 12px;
-  display: flex;
-  flex-direction: column;     /* เรียงบน-ล่าง */
   align-items: center;
-  justify-content: center;
-  gap: 4px;                   /* ระยะห่างระหว่างรูป */
-  background: none;
+  background: #fff;
 }
 
-/* รูปบน: menu.png */
-.topbar__menu {
-  height: 32px;
-  width: auto;
-  object-fit: contain;
-  max-width: 95%;
+/* ✅ PNG แถบบน responsive เหมือน topbar หน้า home */
+.header-img {
+  width: 100%;         /* ยืดเต็มกรอบมือถือ */
+  height: auto;        /* รักษาสัดส่วน */
   display: block;
+  border-radius: 12px; /* ให้ขอบมนเหมือน topbar */
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+  margin-bottom: 18px; /* ระยะห่างจากพาเนลชมพู */
 }
 
-/* รูปล่าง: cooltext.png */
-.topbar__cooltext {
-  height: 22px;
-  width: auto;
-  object-fit: contain;
-  max-width: 95%;
-  display: block;
-}
-
-/* จอใหญ่ขึ้น */
-@media (min-width: 768px) {
-  .topbar__menu { height: 36px; }
-  .topbar__cooltext { height: 26px; }
-}
-
-/* จอเล็กลง */
-@media (max-width: 360px) {
-  .topbar__menu { height: 28px; }
-  .topbar__cooltext { height: 20px; }
-}
-
-/* ===== พื้นหลังสีชมพูหลัก (เท่ากับหน้า home) ===== */
+/* พื้นหลังชมพู */
 .panel {
-  margin-top: 18px;
   background: var(--panel);
   border-radius: 36px;
-  min-height: 70vh;
   width: 100%;
+  min-height: 70vh;
   position: relative;
   overflow: hidden;
   box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.04);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 /* แสงชมพูระเรื่อ */
@@ -95,22 +60,20 @@ body {
   inset: 0;
   background: radial-gradient(closest-side, var(--pink-400), transparent 70%);
   opacity: 0.6;
-  transform: translateZ(0);
   pointer-events: none;
   z-index: 0;
 }
 
-/* ===== ปุ่มอยู่กลางหน้าจอ ===== */
+/* ปุ่มตรงกลาง */
 .menu-container {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   align-items: center;
+  gap: 20px;
   z-index: 1;
 }
 
-/* ===== ปุ่ม ===== */
 button {
   background: none;
   border: none;
@@ -118,22 +81,25 @@ button {
   cursor: pointer;
 }
 
-#menu-camera-button img,
-#menu-upload-button img {
+.menu-container img {
   width: 200px;
   height: auto;
   transition: 0.2s;
 }
 
-#menu-camera-button img:hover,
-#menu-upload-button img:hover {
+.menu-container img:hover {
   transform: scale(1.05);
+}
+
+/* ✅ รูปล่างสุด (ปลาสีฟ้า + ข้อความ) */
+.footer-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 12px;
 }
 
 /* สำหรับหน้าจอเล็ก */
 @media (max-width: 360px) {
-  #menu-camera-button img,
-  #menu-upload-button img {
-    width: 160px;
-  }
+  .menu-container img { width: 160px; }
 }
