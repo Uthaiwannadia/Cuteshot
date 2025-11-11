@@ -102,6 +102,20 @@ body {
   transform: translateX(-50%);
   z-index: 1;
 }
+  button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+#index-start-button img {
+  width: 200px;
+  height: auto;
+  transition: 0.2s;
+}
+#index-start-button img:hover {
+  transform: scale(1.05);
+}
 
 /* จอเล็ก */
 @media (max-width: 360px) {
