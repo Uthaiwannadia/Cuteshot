@@ -24,15 +24,30 @@ body{
   position:relative;
 }
 
+.header-wrapper {
+  position: relative; /* ✅ ทำให้โบว์วางทับ header-img ได้ */
+  display: inline-block;
+}
+
 .header-img {
   width: 100%;
-  height: 56px;               /* เท่ากับ topbar เดิม */
+  height: 56px;              /* เท่ากับ topbar เดิม */
   object-fit: cover;         /* ✅ ขยายเต็มกรอบ */
-  border-radius: 12px;        /* มุมโค้งเท่ากับ topbar */
-  border: 2px solid #ccc;     /* เส้นขอบเทา */
+  border-radius: 12px;       /* มุมโค้งเท่ากับ topbar */
+  border: 2px solid #ccc;    /* เส้นขอบเทา */
   display: block;
-  margin-bottom: 18px;        /* ระยะห่างจาก panel ด้านล่าง */
-  overflow: hidden;           /* ✅ ตัดส่วนที่เกินกรอบ */
+  margin-bottom: 18px;       /* ระยะห่างจาก panel ด้านล่าง */
+  overflow: hidden;          /* ✅ ตัดส่วนที่เกินกรอบ */
+}
+
+/* ✅ ตำแหน่งโบว์ */
+.topbar__bow {
+  position: absolute;
+  left: 10px;
+  top: 50%;                  /* ใช้ 50% เพื่อให้ transform ทำงานสมบูรณ์ */
+  transform: translateY(-50%);
+  width: 55px;
+  height: auto;
 }
 
 /* พาเนลหลัก */
