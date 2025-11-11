@@ -89,3 +89,31 @@ button{ background:none; border:none; padding:0; cursor:pointer; }
   .header-img{ height:48px; }
   .menu-container img{ width:160px; }
 }
+/* 🔸 เพิ่มโบว์เหมือนหน้า CUTESHOT */
+.topbar {
+  height: 56px;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* ต้องมี เพื่อให้โบว์วางในตำแหน่ง absolute ได้ */
+}
+
+/* โบว์ในมุมซ้ายบน */
+.topbar__bow {
+  position: absolute;
+  left: 10px;
+  top: 10%;
+  transform: translateY(-50%);
+  width: 55px;
+  height: auto;
+}
+
+/* ปรับภาพ header ให้โบว์วางทับได้ */
+.header-wrapper {
+  position: relative; /* ✅ ครอบ header-img และ bow ให้อยู่ในกรอบเดียวกัน */
+  display: inline-block;
+  width: 100%;
+}
+
