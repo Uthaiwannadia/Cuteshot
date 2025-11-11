@@ -27,7 +27,7 @@ body{
 .header-img {
   width: 100%;
   height: 56px;               /* เท่ากับ topbar เดิม */
-  object-fit: contain;         /* ✅ ขยายเต็มกรอบ */
+  object-fit: cover;         /* ✅ ขยายเต็มกรอบ */
   border-radius: 12px;        /* มุมโค้งเท่ากับ topbar */
   border: 2px solid #ccc;     /* เส้นขอบเทา */
   display: block;
