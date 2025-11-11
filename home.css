@@ -79,18 +79,7 @@ body {
 }
 
 /* ปุ่ม START */
-.start {
-  position: absolute;
-  left: 50%;
-  top: 45%;
-  transform: translate(-50%, -50%);
-  width: 140px;
-  height: auto;
-  cursor: pointer;
-  user-select: none;
-  display: block;
-  filter: drop-shadow(0 6px 10px rgba(255,0,90,.15));
-}
+
 
 /* ===== Printer area ===== */
 .printer__paper {
