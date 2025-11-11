@@ -22,21 +22,32 @@ body {
 .phone {
   width: min(430px, 100%);
   min-height: 100dvh;
-  padding: 16px 16px 32px;
+  /* ✅ เอา padding บนออก เพื่อให้หัว PNG ชิดขอบ */
+  padding: 0 16px 32px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   background: #fff;
 }
 
 /* ✅ PNG แถบบน responsive เหมือน topbar หน้า home */
 .header-img {
-  width: 100%;         /* ยืดเต็มกรอบมือถือ */
-  height: auto;        /* รักษาสัดส่วน */
+  width: 100%;          /* ยืดเต็มกรอบมือถือ */
+  height: auto;         /* รักษาสัดส่วน */
   display: block;
-  border-radius: 0px; /* ให้ขอบมนเหมือน topbar */
-  box-shadow:none;
-  margin-bottom: 18px; /* ระยะห่างจากพาเนลชมพู */
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 6px;   /* ✅ ลดช่องว่างให้ใกล้กับ cooltext มากขึ้น */
+}
+
+/* ✅ cooltext อยู่ใต้ header-img และเล็กลงนิดนึง */
+.cooltext-img {
+  width: 70%;           /* ✅ ขนาดเล็กกว่าหัว (ประมาณ 70%) */
+  max-width: 300px;     /* จำกัดความกว้างสูงสุด */
+  height: auto;
+  display: block;
+  margin: 0 auto 14px;  /* อยู่กลางและเว้นช่องเล็กน้อยก่อนพาเนลชมพู */
 }
 
 /* พื้นหลังชมพู */
@@ -51,6 +62,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 0;         /* ✅ ชิดกับ cooltext */
 }
 
 /* แสงชมพูระเรื่อ */
@@ -102,4 +114,5 @@ button {
 /* สำหรับหน้าจอเล็ก */
 @media (max-width: 360px) {
   .menu-container img { width: 160px; }
+  .cooltext-img { width: 65%; } /* ✅ ปรับให้เล็กลงอีกนิดบนจอเล็ก */
 }
