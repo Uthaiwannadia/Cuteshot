@@ -28,14 +28,23 @@
     </section>
 
   </main>
+  <div class="panel">
+  <div class="index-container">
+    <button id="index-start-button">
+      <img src="Mymelodyypic/start.png" alt="Start" />
+    </button>
+  </div>
+</div>
+</body>
+</html>
 
-  <!-- เมื่อกดปุ่ม Start → ไปหน้า menu.html -->
-  <script>
-    document.getElementById('startButton').addEventListener('click', () => {
-      window.location.href = 'menu.html';
+    <script>
+    document.getElementById("index-start-button").addEventListener("click", function() {
+      // เปลี่ยนเส้นทางไปยังหน้า menu
+      window.location.href = "menu.html"; 
     });
   </script>
 </body>
 </html>
-
-
+  
+  
