@@ -78,12 +78,13 @@ button{ background:none; border:none; padding:0; cursor:pointer; }
 
 /* cooltext.png (รูปตกแต่งล่าง) */
 .footer-img{
-  width:90%;                /* 🔸เล็กลงนิดหน่อย */
+  width:85%;
   height:auto;
   display:block;
-  margin-top:8px;           /* ระยะห่างด้านบนเล็กน้อย */
+  margin-top:auto;
+  margin-bottom:5px;
+  transform: translateY(-40px) !important;
 }
-
 /* จอเล็ก */
 @media (max-width:360px){
   .header-img{ height:48px; }
@@ -103,9 +104,9 @@ button{ background:none; border:none; padding:0; cursor:pointer; }
 /* โบว์ในมุมซ้ายบน */
 .topbar__bow {
   position: absolute;
-  left: 10px;
-  top: 10%;
-  transform: translateY(-50%);
+  left: 30px;
+  top: 4.7%;
+  transform: translateY(-70%);
   width: 55px;
   height: auto;
 }
@@ -116,4 +117,3 @@ button{ background:none; border:none; padding:0; cursor:pointer; }
   display: inline-block;
   width: 100%;
 }
-
